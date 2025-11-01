@@ -17,6 +17,7 @@ void reverse_trip(list<Goat>&trip);
 void double_goat_ages(list<Goat> &trip);
 void find_oldest_goat(list<Goat> &trip); // prototype for oldest goat
 void check_young_goats(list<Goat> &trip); // prototype for any young gaot
+void count_goats_by_color(list<Goat> &trip); // prototype for a gaot by color
 
 int main_menu();
 
@@ -222,6 +223,17 @@ void check_young_goats(list<Goat> & trip){
     }else{
         cout << "No goats are younger than " << ageLimit << " year.\n";
     }
+}
+// function to check how many goats have a specific color
+void count_goats_by_color(list<Goat> &trip){
+    string color;
+    cout << "Enter the color to count goats: ";
+    cin >> color; 
+    
+    int colorCount = count_if(trip.begin(), trip.end(), [&](Goat &g){
+        return g.get_color() == color;
+    });
+    cout << "there are " << colorCount <<  " goats with the color |" << color << " |\n";
 }
 
 
