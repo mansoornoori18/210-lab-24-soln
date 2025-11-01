@@ -14,6 +14,7 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 void find_goat(list<Goat>trip);
 void reverse_trip(list<Goat>&trip);
+void 
 
 int main_menu();
 
@@ -160,6 +161,7 @@ void find_goat(list<Goat>trip){
     }
 
 }
+// function to reverse the goat list 
 void reverse_trip(list<Goat> &trip){
     cout << "reversing the goat list.. \n";
     trip.reverse();
