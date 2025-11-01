@@ -4,6 +4,7 @@
 #include <list>
 #include "Goat.h"
 #include <algorithm>
+#include <numeric>    // needed for accumulation 
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
@@ -18,6 +19,7 @@ void double_goat_ages(list<Goat> &trip);
 void find_oldest_goat(list<Goat> &trip); // prototype for oldest goat
 void check_young_goats(list<Goat> &trip); // prototype for any young gaot
 void count_goats_by_color(list<Goat> &trip); // prototype for a gaot by color
+void total_goat_age(list<Goat> &trip);       // prototype for accumulation the goats 
 
 int main_menu();
 
@@ -240,5 +242,9 @@ void count_goats_by_color(list<Goat> &trip){
     });
     cout << "there are " << colorCount <<  " goats with the color |" << color << " |\n";
 }
-
+void total_goat_age(list<Goat> &trip){
+    int totalAge = accumulate(trip.begin(), trip.end(), 0,[](int sum, const Goat &g){
+        return sum + g.get_age();
+    });
+}
 
