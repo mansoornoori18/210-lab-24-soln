@@ -51,7 +51,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 8) {
+    while (sel != 9) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -82,6 +82,10 @@ int main() {
             cout << "findding the oldest goat\n";
             find_oldest_goat(trip);
             break;
+            case 8:
+            cout << "looking for any young goat\n";
+            check_young_goats(trip);
+            break;
                   
             default:
                 cout << "Invalid selection.\n";
@@ -103,11 +107,12 @@ int main_menu() {
     cout << "[5] Reverse goat list\n"; 
     cout << "[6] Double all goats ages\n";
     cout << "[7] To find the oldest Goat\n";
-    cout << "[8] Quit\n";
+    cout << "[8] To check for young goats\n";
+    cout << "[9] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 8) {
+    while (choice < 1 || choice > 9) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -212,7 +217,11 @@ void check_young_goats(list<Goat> & trip){
     bool hasYoungGoat = any_of(trip.begin(), trip.end(), [&](Goat &g){
         return g.get_age() < ageLimit;
     });
-    
+    if (hasYoungGoat){
+        cout << "there is at least one goat younger than " << ageLimit << "year.\n";
+    }else{
+        cout << "No goats are younger than " << ageLimit << " year.\n";
+    }
 }
 
 
