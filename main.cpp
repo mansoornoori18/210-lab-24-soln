@@ -14,7 +14,7 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 void find_goat(list<Goat>trip);
 void reverse_trip(list<Goat>&trip);
-void 
+void double_goat_ages(list<Goat> &trip);
 
 int main_menu();
 
@@ -165,5 +165,13 @@ void find_goat(list<Goat>trip){
 void reverse_trip(list<Goat> &trip){
     cout << "reversing the goat list.. \n";
     trip.reverse();
+    display_trip(trip);
+}
+void double_goat_ages(list<Goat> &trip){
+    cout << "double the age of all the goats\n";
+    for (auto &g : trip){
+        g.set_age(g.get_age()*2);
+    }
+    cout << "all goats ages have been doubled\n";
     display_trip(trip);
 }
