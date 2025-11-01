@@ -59,6 +59,12 @@ int main() {
                 cout << "Displaying goat data.\n";
                 display_trip(trip);
                 break;
+            case 4:
+            cout << "searching for a goat.\n";
+            find_goat(trip);
+            break;
+
+            
             default:
                 cout << "Invalid selection.\n";
                 break;
