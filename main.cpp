@@ -13,6 +13,8 @@ void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 void find_goat(list<Goat>trip);
+void reverse_trip(list<Goat>trip);
+
 int main_menu();
 
 int main() {
@@ -46,7 +48,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 5) {
+    while (sel != 6) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -64,6 +66,8 @@ int main() {
             cout << "searching for a goat.\n";
             find_goat(trip);
             break;
+            case 5:
+            cout << ""
                   
             default:
                 cout << "Invalid selection.\n";
