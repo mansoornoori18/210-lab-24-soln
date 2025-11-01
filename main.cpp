@@ -66,8 +66,6 @@ int main() {
             cout << "searching for a goat.\n";
             find_goat(trip);
             break;
-            case 5:
-            cout << ""
                   
             default:
                 cout << "Invalid selection.\n";
@@ -85,8 +83,9 @@ int main_menu() {
     cout << "[1] Add a goat\n";
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
-    cout << "[4] Find a goat by name\n"; 
-    cout << "[5] Quit\n";
+    cout << "[4] Find a goat by name\n";
+    cout << "[5] Reverse goat list\n"; 
+    cout << "[6] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
