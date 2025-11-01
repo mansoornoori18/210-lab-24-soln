@@ -15,6 +15,7 @@ void display_trip(list<Goat> trip);
 void find_goat(list<Goat>trip);
 void reverse_trip(list<Goat>&trip);
 void double_goat_ages(list<Goat> &trip);
+void find_oldest_goat(list<Goat> &trip); // prototype for oldest goat
 
 int main_menu();
 
@@ -181,3 +182,13 @@ void double_goat_ages(list<Goat> &trip){
     cout << "all goats ages have been doubled\n";
     display_trip(trip);
 }
+// function to find the oldest goat
+void find_oldest_goat(list<Goat> &trip){
+    if (trip.empty()){
+        cout << "no goats in the trip\n";
+        return;
+    }
+    
+}
+
+
