@@ -13,7 +13,7 @@ void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 void find_goat(list<Goat>trip);
-void reverse_trip(list<Goat>trip);
+void reverse_trip(list<Goat>&trip);
 
 int main_menu();
 
@@ -65,6 +65,10 @@ int main() {
             case 4:
             cout << "searching for a goat.\n";
             find_goat(trip);
+            break;
+            case 5:
+            cout << " reversing\n";
+            reverse_trip(trip);
             break;
                   
             default:
@@ -155,4 +159,9 @@ void find_goat(list<Goat>trip){
         cout << "Gaot Not found. \n";
     }
 
+}
+void reverse_trip(list<Goat> &trip){
+    cout << "reversing the goat list.. \n";
+    trip.reverse();
+    display_trip(trip);
 }
