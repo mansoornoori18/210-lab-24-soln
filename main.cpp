@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <list>
 #include "Goat.h"
+#include <algorithm>
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
@@ -74,7 +75,8 @@ int main_menu() {
     cout << "[1] Add a goat\n";
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
-    cout << "[4] Quit\n";
+    cout << "[4] Find a goat by name\n"; 
+    cout << "[5] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
@@ -125,4 +127,10 @@ int select_goat(list<Goat> trp) {
         cin >> input;
     }
     return input;
+}
+void find_goat(list<Goat>trip){
+    cout << "search for a goat by naem" << endl;
+    string searchName;
+    cout << "Enter the name of the goat:";
+    cin >> searchName;
 }
