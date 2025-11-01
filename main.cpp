@@ -188,7 +188,15 @@ void find_oldest_goat(list<Goat> &trip){
         cout << "no goats in the trip\n";
         return;
     }
-    
+    auto oldest = trip.begin();
+    for (auto it = trip.begin(); it != trip.end(); ++it){
+        if (it->get_age() > oldest->get_age()){
+            oldest = it;
+        }
+    }
+    cout << "the oldest goat is: " << oldest->get_name() << " (" << oldest->get_age() 
+    << ", " << oldest->get_color() << " )\n";
+
 }
 
 
