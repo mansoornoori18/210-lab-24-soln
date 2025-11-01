@@ -52,7 +52,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 9) {
+    while (sel != 10) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -87,7 +87,11 @@ int main() {
             cout << "looking for any young goat\n";
             check_young_goats(trip);
             break;
-                  
+            case 9:
+            cout << "count goat by color \n";
+            count_goats_by_color(trip);
+            break;
+            
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -109,11 +113,12 @@ int main_menu() {
     cout << "[6] Double all goats ages\n";
     cout << "[7] To find the oldest Goat\n";
     cout << "[8] To check for young goats\n";
-    cout << "[9] Quit\n";
+    cout << "[9] count goats by color\n";
+    cout << "[10] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 9) {
+    while (choice < 1 || choice > 10) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
