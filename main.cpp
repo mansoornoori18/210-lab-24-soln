@@ -20,6 +20,7 @@ void find_oldest_goat(list<Goat> &trip); // prototype for oldest goat
 void check_young_goats(list<Goat> &trip); // prototype for any young gaot
 void count_goats_by_color(list<Goat> &trip); // prototype for a gaot by color
 void total_goat_age(list<Goat> &trip);       // prototype for accumulation the goats 
+void clear_all_goats(list<Goat> &trip);      // ptototype for clear 
 
 int main_menu();
 
@@ -252,4 +253,6 @@ void total_goat_age(list<Goat> &trip){
         return sum + g.get_age();
     });
 }
+// function to clear all the goats
+void 
 
