@@ -80,7 +80,7 @@ int main_menu() {
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 4) {
+    while (choice < 1 || choice > 5) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -128,9 +128,16 @@ int select_goat(list<Goat> trp) {
     }
     return input;
 }
+
+// function for find_goat
 void find_goat(list<Goat>trip){
     cout << "search for a goat by naem" << endl;
     string searchName;
     cout << "Enter the name of the goat:";
     cin >> searchName;
+
+    auto it = find_if(trip.begin(), trip.end(), [&](const Goat&g){
+        return g.get_name() ==searchName;
+    });
+
 }
