@@ -1,5 +1,5 @@
-#include <iostream>
-#include <fstream>
+#include <iostream>   // COMSC-210 || Lab-28 || Mansoor Noori
+#include <fstream>    // IDE VSC
 #include <iomanip>
 #include <list>
 #include "Goat.h"
@@ -55,7 +55,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 11) {
+    while (sel != 12) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -98,6 +98,10 @@ int main() {
             cout << "The total age for goats\n";
             total_goat_age(trip);
             break;
+            case 11:
+            cout << "Remove all the goats from the trip\n";
+            clear_all_goats(trip);
+            break;
             
             default:
                 cout << "Invalid selection.\n";
@@ -111,22 +115,23 @@ int main() {
 }
 
 int main_menu() {
-    cout << "*** GOAT MANAGER 3001 ***\n";
-    cout << "[1] Add a goat\n";
-    cout << "[2] Delete a goat\n";
-    cout << "[3] List goats\n";
-    cout << "[4] Find a goat by name\n";
-    cout << "[5] Reverse goat list\n"; 
-    cout << "[6] Double all goats ages\n";
-    cout << "[7] To find the oldest Goat\n";
-    cout << "[8] To check for young goats\n";
-    cout << "[9] count goats by color\n";
+    cout << "***  GOAT MANAGER 3001  ***\n";
+    cout << "[1]  Add a goat\n";
+    cout << "[2]  Delete a goat\n";
+    cout << "[3]  List goats\n";
+    cout << "[4]  Find a goat by name\n";
+    cout << "[5]  Reverse goat list\n"; 
+    cout << "[6]  Double all goats ages\n";
+    cout << "[7]  To find the oldest Goat\n";
+    cout << "[8]  To check for young goats\n";
+    cout << "[9]  count goats by color\n";
     cout << "[10] Total age of all goats\n";
-    cout << "[11] Quit\n";
+    cout << "[11] Remove all goats from the trip\n";
+    cout << "[12] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 11) {
+    while (choice < 1 || choice > 12) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -254,5 +259,8 @@ void total_goat_age(list<Goat> &trip){
     });
 }
 // function to clear all the goats
-void 
+void clear_all_goats(list<Goat> &trip){
+    trip.clear();
+    cout << "all goats have been removed from the trip\n";
+}
 
