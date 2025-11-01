@@ -50,7 +50,7 @@ int main() {
     
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 7) {
+    while (sel != 8) {
         switch (sel) {
             case 1:
                 cout << "Adding a goat.\n";
@@ -77,6 +77,10 @@ int main() {
             cout << "double the ages of goats\n";
             double_goat_ages(trip);
             break;
+            case 7:
+            cout << "findding the oldest goat\n";
+            find_oldest_goat(trip);
+            break;
                   
             default:
                 cout << "Invalid selection.\n";
@@ -97,11 +101,12 @@ int main_menu() {
     cout << "[4] Find a goat by name\n";
     cout << "[5] Reverse goat list\n"; 
     cout << "[6] Double all goats ages\n";
-    cout << "[7] Quit\n";
+    cout << "[7] To find the oldest Goat\n";
+    cout << "[8] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 7) {
+    while (choice < 1 || choice > 8) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
