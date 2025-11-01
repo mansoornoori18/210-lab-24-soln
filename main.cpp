@@ -61,10 +61,7 @@ int main() {
                 break;
             case 4:
             cout << "searching for a goat.\n";
-            find_goat(trip);
-            break;
-
-            
+                  
             default:
                 cout << "Invalid selection.\n";
                 break;
@@ -145,5 +142,11 @@ void find_goat(list<Goat>trip){
     auto it = find_if(trip.begin(), trip.end(), [&](const Goat&g){
         return g.get_name() ==searchName;
     });
+    if (it != trip.end()) {
+        cout << "goat found: "
+        << it->get_name() << "(" << it->get_age() << ", " << it->get_color() << "),\n";
+    }else {
+        cout << "Gaot Not found. \n";
+    }
 
 }
