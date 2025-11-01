@@ -16,6 +16,7 @@ void find_goat(list<Goat>trip);
 void reverse_trip(list<Goat>&trip);
 void double_goat_ages(list<Goat> &trip);
 void find_oldest_goat(list<Goat> &trip); // prototype for oldest goat
+void check_young_goats(list<Goat> &trip); // prototype for any young gaot
 
 int main_menu();
 
@@ -201,7 +202,17 @@ void find_oldest_goat(list<Goat> &trip){
     }
     cout << "the oldest goat is: " << oldest->get_name() << " (" << oldest->get_age() 
     << ", " << oldest->get_color() << " )\n";
+}
+//function for check if any gaot is younger then specified age
+void check_young_goats(list<Goat> & trip){
+    int ageLimit;
+    cout << "Enter the age check for goats younger than this\n ";
+    cin >> ageLimit;
 
+    bool hasYoungGoat = any_of(trip.begin(), trip.end(), [&](Goat &g){
+        return g.get_age() < ageLimit;
+    });
+    
 }
 
 
